@@ -1,3 +1,7 @@
+<?php
+    include_once "config.php"
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -55,6 +59,7 @@
 								Acceder
 							</button>
 							<input type="hidden" value="access" name="action">
+                            <input type="hidden" name="token" value="<?php $_SESSION['token']?>">
 						</form>
 					</div> 
 				</div>
