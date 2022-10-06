@@ -34,7 +34,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 						</p>
-						<form method="post" action="app/AuthController.php" class="form">
+						<form method="post" action="<?= BASE_PATH ?>auth" class="form">
 							
 							<div>
                                 
