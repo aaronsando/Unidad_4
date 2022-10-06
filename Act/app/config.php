@@ -9,5 +9,10 @@ session_start();
         $_SESSION['token'] = md5(uniqid(mt_rand(),true));
     }
 
+    if (!defined('BASE_PATH')) {
+        # code...
+        define('BASE_PATH', 'URL de la pagina/');
+    }
+
 
 ?>
