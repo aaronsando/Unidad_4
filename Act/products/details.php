@@ -1,3 +1,4 @@
+<?php include "../app/config.php"; ?>
 <!DOCTYPE html>
 <html>
 	<head>

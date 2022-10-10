@@ -1,28 +1,20 @@
 <?php
-
-include_once " config.php"; 
-
-if(isset($_POST['action'])){
-    if(isset($_POST['token']) && $_POST['token'] == $_SESSION['token']){
-        switch($_POST['action']){
-
-        }
-    }
-}
-
+include 'config.php';
 if (isset($_POST['action'])) {
-	switch ($_POST['action']) {
-		case 'access':
-			
-			$authController = new AuthController();
+	 if( isset($_POST['global_token']) && $_POST['global_token'] == $_SESSION['global_token'] ) {
+		switch ($_POST['action']) {
+			case 'access':
+				
+				$authController = new AuthController();
 
 
-			$email = strip_tags($_POST['email']);
-			$password = strip_tags($_POST['password']);
+				$email = strip_tags($_POST['email']);
+				$password = strip_tags($_POST['password']);
 
-			$authController->login($email,$password);
+				$authController->login($email,$password);
 
-		break; 
+			break; 
+		}
 	}
 }
 
@@ -54,20 +46,33 @@ Class AuthController{
 
 		if ( isset($response->code) && $response->code > 0) {
 
+			
+
 			$_SESSION['name']= $response->data->name;
 			$_SESSION['lastname']= $response->data->lastname;
 			$_SESSION['avatar']= $response->data->avatar;
 			$_SESSION['token']= $response->data->token;
-			#var_dump($response);
-			header("Location:".BASE_PATH."products");
+
+			header("Location:products");
 		}else{
 
-
-			#var_dump($response);
-			header("Location:".BASE_PATH."?error=true");
+			header("Location:?error=true");
 		}
 
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

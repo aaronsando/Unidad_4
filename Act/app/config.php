@@ -1,18 +1,9 @@
-<?php
-
-// include_once "config.php" en cada controlador
-
-session_start();
-
-    if (!isset($_SESSION['token'])) {
-        # code...
-        $_SESSION['token'] = md5(uniqid(mt_rand(),true));
+<?php 
+	session_start();
+	 if ( !isset( $_SESSION['global_token']) ) {
+        $_SESSION['global_token'] = md5( uniqid( mt_rand(), true ) );
     }
-
-    if (!defined('BASE_PATH')) {
-        # code...
-        define('BASE_PATH', 'URL de la pagina/');
-    }
-
-
+  $route = "http://localhost/ProgramacionAvanzadaWeb/";
+    
+  if (!defined('BASE_PATH')) define('BASE_PATH',$route);
 ?>
